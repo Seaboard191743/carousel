@@ -8,8 +8,11 @@ export default function UseSlider() {
   const [startPos, setStartPos] = useState(0);
   const [currentPos, setCurrentPos] = useState(0);
   const [diffPos, setDiffPos] = useState(0);
+  const [cPosX, setCPosX] = useState(0);
+  const [cPosY, setCPosY] = useState(0);
 
   const sliderRef = useRef();
+  const cursorRef = useRef();
 
   function handleNext() {
     if (currentTranslate > -SLIDER_LENGTH) {
@@ -25,10 +28,14 @@ export default function UseSlider() {
       setCurrentTranslate(-SLIDER_LENGTH);
     }
   }
+
   function handleStart(e) {
     e.preventDefault();
+    cursorRef.current.classList.add("cursor--animation");
     setStatus(true);
     setStartPos(e.clientX);
+    setCPosX(e.clientX);
+    setCPosY(e.clientY);
     setElemWidth(e.target.getBoundingClientRect().width);
   }
 
@@ -48,6 +55,10 @@ export default function UseSlider() {
     if (diffPos > 0 && diffPos > elemWidth / 4) {
       handlePrev(e);
     }
+    setTimeout(
+      () => cursorRef.current.classList.remove("cursor--animation"),
+      500
+    );
     setStatus(false);
   }
 
@@ -62,12 +73,15 @@ export default function UseSlider() {
       sliderRef.current.removeEventListener("pointerup", handleEnd);
     };
   });
-
+  console.log(cPosX, cPosY);
   return {
     handleNext,
     handlePrev,
     sliderRef,
+    cursorRef,
     currentTranslate,
+    cPosX,
+    cPosY,
     setCurrentTranslate,
   };
 }

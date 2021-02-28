@@ -11,13 +11,21 @@ export default function App() {
     handleNext,
     handlePrev,
     sliderRef,
+    cursorRef,
     currentTranslate,
     setCurrentTranslate,
+    cPosX,
+    cPosY,
   } = UseSlider();
   const slides = images.map((img) => <Slide key={img.id} src={img.src} />);
   const btnsPorps = { handlePrev, handleNext };
   return (
     <>
+      <div
+        className="cursor"
+        ref={cursorRef}
+        style={{ left: `${cPosX}px`, top: `${cPosY}px` }}
+      ></div>
       <div className="container">
         <div
           className="slider"
