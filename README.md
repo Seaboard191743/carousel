@@ -12,7 +12,7 @@
 
     - Slides can be changed by clicking:
       -- buttons (next, prev)
-      -- indicators of the current slider
+      -- indicators of the current slide
      ___________________________________
 
     - Slides can be changed by swiping
