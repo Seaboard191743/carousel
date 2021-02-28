@@ -1,0 +1,36 @@
+.cursor {
+  pointer-events: none;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: red;
+  transform: translate(-50%, -50%);
+  transform-origin: 100%, 100%;
+  transition: background 0.1s, width 0.5s, height 0.5s;
+  z-index: 10;
+}
+
+.cursor--hover {
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: 3px solid red;
+}
+.expand {
+  animation: cursorAnimation 0.5s forwards;
+  width: 35px;
+  height: 35px;
+}
+
+@keyframes cursorAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,6 @@
+.slideIndicator {
+  width: min(150px, 100%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}

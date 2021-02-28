@@ -1,0 +1,20 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  outline-offset: none;
+}
+body {
+  cursor: none;
+  height: 100vh;
+  overflow: hidden;
+}
+#root {
+  height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}

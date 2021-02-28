@@ -1,0 +1,10 @@
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(224, 224, 224, 1);
+  transition: background 0.5s;
+}
+.indicator--active {
+  background: rgba(144, 164, 174, 1);
+}
