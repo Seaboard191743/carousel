@@ -22,3 +22,9 @@
 .prevBtn {
   left: 0;
 }
+
+@media (max-width: 767px) {
+  .btn {
+    display: none;
+  }
+}
