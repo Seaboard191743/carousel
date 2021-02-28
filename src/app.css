@@ -21,7 +21,7 @@
   z-index: 10;
 }
 .cursor--animation {
-  animation: cursorAnimation 0.5s forwards;
+  animation: cursorAnimation 0.5s forwards ease-in;
 }
 
 @keyframes cursorAnimation {
@@ -29,11 +29,23 @@
     width: 0;
     height: 0;
   }
+  30% {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 10px rgba(156, 39, 176, 0.3);
+  }
   50% {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     box-shadow: 0 0 10px 10px rgba(224, 244, 224, 0.8);
+  }
+  70% {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 10px rgba(156, 39, 176, 0.5);
   }
   100% {
     width: 0;

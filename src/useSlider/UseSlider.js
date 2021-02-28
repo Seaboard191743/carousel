@@ -44,6 +44,8 @@ export default function UseSlider() {
     if (status) {
       setCurrentPos(e.clientX);
       setDiffPos(currentPos - startPos);
+      setCPosX(e.clientX);
+      setCPosY(e.clientY);
     }
   }
 
