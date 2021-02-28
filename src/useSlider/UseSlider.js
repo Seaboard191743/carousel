@@ -75,7 +75,6 @@ export default function UseSlider() {
       sliderRef.current.removeEventListener("pointerup", handleEnd);
     };
   });
-  console.log(cPosX, cPosY);
   return {
     handleNext,
     handlePrev,
