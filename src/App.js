@@ -1,14 +1,12 @@
-import React, { useRef } from "react";
+import React from "react";
 import Slide from "./components/slide/Slide";
 import SlideIndicator from "./components/slideIndicator/SlideIndicator";
 import Buttons from "./components/buttons/Buttons";
-import Cursor from "./components/cursor/Cursor";
 import UseSlider from "./useSlider/UseSlider";
 import { images } from "./components/helpers/data";
 import "./app.css";
 
 export default function App() {
-  const containerRef = useRef();
   const {
     handleNext,
     handlePrev,
@@ -20,8 +18,7 @@ export default function App() {
   const btnsPorps = { handlePrev, handleNext };
   return (
     <>
-      <Cursor />
-      <div className="container" ref={containerRef}>
+      <div className="container">
         <div
           className="slider"
           ref={sliderRef}

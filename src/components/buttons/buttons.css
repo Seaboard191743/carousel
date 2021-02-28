@@ -9,7 +9,7 @@
   padding: 1rem;
   background: none;
   border: none;
-  cursor: none;
+  cursor: pointer;
   transition: all 0.7s;
 }
 .btn:active {

@@ -30,36 +30,8 @@ export default function UseSlider() {
     setStatus(true);
     setStartPos(e.clientX);
     setElemWidth(e.target.getBoundingClientRect().width);
-    return false;
   }
-  function handleTouchStart(e) {
-    setStatus(true);
-    setStartPos(e.touches[0].clientX);
-  }
-  function handleTouchMove(e) {
-    if (status) {
-      setCurrentPos(e.touches[0].clientX);
-      setDiffPos(currentPos - startPos);
-    }
-  }
-  function handleTouchEnd(e) {
-    if (diffPos < 0 && Math.abs(diffPos) > elemWidth / 4) {
-      handleNext(e);
-    }
-    if (diffPos > 0 && diffPos > elemWidth / 4) {
-      handlePrev(e);
-    }
-    setStatus(false);
-  }
-  function handleEnd(e) {
-    if (diffPos < 0 && Math.abs(diffPos) > elemWidth / 4) {
-      handleNext(e);
-    }
-    if (diffPos > 0 && diffPos > elemWidth / 4) {
-      handlePrev(e);
-    }
-    setStatus(false);
-  }
+
   function handleMove(e) {
     e.preventDefault();
     if (status) {
@@ -68,21 +40,26 @@ export default function UseSlider() {
     }
   }
 
+  function handleEnd(e) {
+    e.preventDefault();
+    if (diffPos < 0 && Math.abs(diffPos) > elemWidth / 4) {
+      handleNext(e);
+    }
+    if (diffPos > 0 && diffPos > elemWidth / 4) {
+      handlePrev(e);
+    }
+    setStatus(false);
+  }
+
   useEffect(() => {
-    sliderRef.current.addEventListener("mousedown", handleStart);
-    sliderRef.current.addEventListener("mousemove", handleMove);
-    sliderRef.current.addEventListener("mouseup", handleEnd);
-    sliderRef.current.addEventListener("touchstart", handleTouchStart);
-    sliderRef.current.addEventListener("touchmove", handleTouchMove);
-    sliderRef.current.addEventListener("touchend", handleTouchEnd);
+    sliderRef.current.addEventListener("pointerdown", handleStart);
+    sliderRef.current.addEventListener("pointermove", handleMove);
+    sliderRef.current.addEventListener("pointerup", handleEnd);
 
     return () => {
-      sliderRef.current.removeEventListener("mousedown", handleStart);
-      sliderRef.current.removeEventListener("mousemove", handleMove);
-      sliderRef.current.removeEventListener("mouseup", handleEnd);
-      sliderRef.current.removeEventListener("touchstart", handleTouchStart);
-      sliderRef.current.removeEventListener("touchmove", handleTouchMove);
-      sliderRef.current.removeEventListener("touchend", handleTouchEnd);
+      sliderRef.current.removeEventListener("pointerdown", handleStart);
+      sliderRef.current.removeEventListener("pointermove", handleMove);
+      sliderRef.current.removeEventListener("pointerup", handleEnd);
     };
   });
 

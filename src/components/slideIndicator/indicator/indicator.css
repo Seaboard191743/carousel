@@ -3,6 +3,7 @@
   height: 12px;
   border-radius: 50%;
   background: rgba(224, 224, 224, 1);
+  cursor: pointer;
   transition: background 0.5s;
 }
 .indicator--active {
