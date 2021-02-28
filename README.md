@@ -6,6 +6,6 @@
 ### 2. Run "npm i" to install all the dependencies
 
     - To open DEV SERVER, please, run "npm start"
-    - Production mode "npm run build"
+    - Production mode - "npm run build"
 
 ### 3. Here you can find live demo: https://carousel-seaboard.netlify.app/
