@@ -9,3 +9,11 @@
     - Production mode - "npm run build"
 
 ### 3. Here you can find live demo: https://carousel-seaboard.netlify.app/
+
+    - Slides can be changed by clicking:
+      -- buttons (next, prev)
+      -- indicators of the current slider
+     ___________________________________
+
+    - Slides can be changed by swiping
+     ___________________________________
